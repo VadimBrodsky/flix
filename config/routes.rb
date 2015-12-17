@@ -53,8 +53,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  root 'movies#index'
-  get 'movies' => 'movies#index'
-  get 'movies/:id' => 'movies#show', as: 'movie'
 end
