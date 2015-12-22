@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe 'Viewing a movie listing' do
   it 'shows the movie details' do
     movie1 = Movie.create(title: "Iron Man",
@@ -8,7 +6,7 @@ describe 'Viewing a movie listing' do
                       description: "Tony Stark builds an armored suit to fight the throes of evil",
                       released_on: "2008-05-02")
 
-    visit "http://www.example.com/movies/#{movie1.id}"
+    visit movie_url(movie1)
 
     expect(page).to have_text(movie1.title)
     expect(page).to have_text(movie1.rating)
