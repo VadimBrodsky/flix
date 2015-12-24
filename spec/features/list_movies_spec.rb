@@ -34,5 +34,4 @@ describe 'Viewing the list of movies' do
     expect(page).to have_text(movie1.released_on)
     expect(page).to have_text('$318,412,101.00')
   end
-
 end
