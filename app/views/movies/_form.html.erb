@@ -1,7 +1,7 @@
 <%= form_for @movie do |f| %>
     <p>
         <%= f.label :title %> <br/>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, autofocus: true %>
     </p>
     <p>
         <%= f.label :description %><br/>
@@ -20,6 +20,7 @@
         <%= f.number_field :total_gross %>
     </p>
     <p>
-        <%= f.submit %>
+        <%= f.submit %> |
+        <%= link_to 'Cancel', movies_path %>
     </p>
 <% end %>
