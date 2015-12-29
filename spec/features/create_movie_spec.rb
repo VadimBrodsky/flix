@@ -1,6 +1,4 @@
 describe 'Creating a new movie' do
-  it 'shows the create event link'
-
   it 'saves the movie and shows the new movie\'s details' do
     visit movies_url
     click_link 'Add New Movie'
