@@ -1,5 +1,8 @@
 class MoviesController < ApplicationController
   def index
+    # @movies = Movie.hits
+    # @movies = Movie.flops
+    # @movies = Movie.recently_added
     @movies = Movie.released
   end
 
