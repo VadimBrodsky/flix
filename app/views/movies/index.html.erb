@@ -5,12 +5,18 @@
 <% @movies.each do |movie| %>
   <article>
     <header>
+        <td> <%= image_tag movie.image_file_name %> </td>
         <h2><%= link_to movie.title, movie %></h2>
+        <h3><%= movie.cast %></h3>
     </header>
     <p>
       <%= truncate(movie.description, length: 40, separator: ' ') %>
     </p>
     <table>
+      <tr>
+        <th>Duration:</th>
+        <td><%= movie.duration %></td>
+      </tr>
       <tr>
         <th>Released:</th>
         <td><%= movie.released_on %></td>
