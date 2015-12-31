@@ -1,6 +1,5 @@
 <article>
   <header>
-    <%= image_tag @movie.image_file_name %>
     <h1><%= @movie.title %></h1>
   </header>
   <h2>Description</h2>
@@ -19,6 +18,8 @@
   <p>
       <%= @movie.duration %>
   </p>
+  <h3>Image</h3>
+  <%= image_tag @movie.image_file_name %>
   <h3>Rating</h3>
   <p>
     <%= @movie.rating %>
