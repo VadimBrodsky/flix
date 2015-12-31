@@ -44,7 +44,8 @@ class MoviesController < ApplicationController
     # .require - will raise an exception if the given key isn't found
     # .permit! - make all attributes updateable
     params.require(:movie).permit(
-      :title, :description, :rating, :released_on, :total_gross
+      :title, :description, :rating, :released_on, :total_gross, :cast,
+      :director, :duration, :image_file_name
     )
   end
 end
