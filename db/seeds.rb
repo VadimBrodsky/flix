@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 Movie.create!([
   {
     title: 'Iron Man',
@@ -41,6 +42,17 @@ Movie.create!([
     image_file_name: 'spiderman.jpg'
   },
   {
+    title: 'Batman vs. Godzilla',
+    rating: 'PG-13',
+    total_gross: 387623910,
+    description: 'The Caped Crusader battles the fire-breathing Gojira',
+    released_on: 10.days.from_now,
+    cast: 'Bruce Wayne, Gojira',
+    director: 'Ishiro Honda',
+    duration: '211 min',
+    image_file_name: 'batman-vs-godzilla.jpg'
+  },
+  {
     title: 'Catwoman',
     rating: 'PG-13',
     total_gross: 40200000.00,
@@ -50,16 +62,5 @@ Movie.create!([
     director: 'Jean-Christophe \'Pitof\' Comar',
     duration: '101 min',
     image_file_name: 'catwoman.jpg'
-  },
-  {
-    title: 'Batman vs. Godzilla',
-    rating: 'PG-13',
-    total_gross: 40200000.00,
-    description: 'The ultimate fight between the bat and the lizard',
-    released_on: '2018-07-23',
-    cast: 'Bruce Waynce, Gojira',
-    director: 'Ishiro Honda',
-    duration: '211 min',
-    image_file_name: 'batman-vs-godzilla.jpg'
   }
 ])
