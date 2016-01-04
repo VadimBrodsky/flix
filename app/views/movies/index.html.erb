@@ -5,8 +5,8 @@
 <% @movies.each do |movie| %>
   <article>
     <header>
-        <td><%= image_for movie %></td>
         <h2><%= link_to movie.title, movie %></h2>
+        <h3><%= image_for movie %></h3>
         <h3><%= movie.cast %></h3>
     </header>
     <p>

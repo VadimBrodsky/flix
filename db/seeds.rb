@@ -44,7 +44,7 @@ Movie.create!([
   {
     title: 'Batman vs. Godzilla',
     rating: 'PG-13',
-    total_gross: 387623910,
+    total_gross: 387623910.00,
     description: 'The Caped Crusader battles the fire-breathing Gojira',
     released_on: 10.days.from_now,
     cast: 'Bruce Wayne, Gojira',
