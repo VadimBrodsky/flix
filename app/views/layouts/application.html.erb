@@ -7,30 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body style="margin: 0; font-family: sans;">
-
-    <header style="padding: 5px; color: #f0f0f0; background: #237cbe; text-align: center;">
-        <h1>Flix</h1>
-    </header>
-
-    <aside style="float: right; background: #f0f0f0; width: 200px;">
-        <nav>
-            <ul style="list-style: none; padding-left: 1em;">
-                <li><%= link_to 'All Movies', movies_path %></li>
-                <li><%= link_to 'Add New Movie', new_movie_path %></li>
-            </ul>
-        </nav>
-    </aside>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/sidebar' %>
 
     <section style="padding: 0 1em;">
         <%= yield %>
     </section>
 
-    <footer style="text-align: center; padding: 5px; color: #237cbe; background: #f0f0f0;">
-        <p>
-            Copyright &copy; 2015
-            <%= link_to 'The Pragrmatic Studio', '#' %>
-        </p>
-    </footer>
-
+    <%= render 'layouts/footer' %>
 </body>
 </html>
