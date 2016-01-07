@@ -16,7 +16,7 @@ describe 'A review' do
   it 'requires a name' do
     review = Review.new(name: '')
     review.valid?
-    expect(review.errros[:name].any?).to eq(true)
+    expect(review.errors[:name].any?).to eq(true)
   end
 
   it 'requires a comment' do
@@ -32,7 +32,7 @@ describe 'A review' do
   end
 
   it 'accepts start values of 1 through 5' do
-    stars = [1,2,3,4,5]
+    stars = Review::STARS
     stars.each do |star|
       review = Review.new(stars: star)
       review.valid?
