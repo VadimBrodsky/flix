@@ -30,7 +30,7 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
-      redirect_to movie_path(@movie)
+      redirect_to movie_path(@movie), notice: 'Movie successfully created!'
     else
       render :new
     end
