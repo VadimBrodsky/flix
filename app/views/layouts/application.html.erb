@@ -10,17 +10,7 @@
     <%= render 'layouts/header' %>
     <div id="wrapper">
 
-        <% if flash[:notice] %>
-        <div class="flash notice">
-            <%= flash[:notice] %>
-        </div>
-        <% end %>
-
-        <% if flash[:alert] %>
-        <div class="flash alert">
-            <%= flash[:alert] %>
-        </div>
-        <% end %>
+        <%= render 'layouts/flashes' %>
 
         <div id="container">
             <section id="sidebar">
