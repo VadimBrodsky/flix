@@ -152,7 +152,7 @@ describe 'A movie' do
   end
 
   it 'deletes associated reviews' do
-    movie = Movie.new(movie_attributes)
+    movie = Movie.create(movie_attributes)
     movie.reviews.create(review_attributes)
     expect { movie.destroy }.to change(Review, :count).by(-1)
   end
