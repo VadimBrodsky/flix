@@ -9,6 +9,12 @@
 <body>
     <%= render 'layouts/header' %>
     <div id="wrapper">
+        <% if flash[:notice] %>
+        <div class="flash notice">
+            <%= flash[:notice] %>
+        </div>
+        <% end %>
+
         <div id="container">
             <section id="sidebar">
                 <%= render 'layouts/sidebar' %>
