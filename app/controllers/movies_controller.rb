@@ -17,6 +17,7 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     if @movie.update(movie_params)
+      flash[:notice] = 'Movie successfully updated!'
       redirect_to movie_path(@movie)
     else
       render :edit
