@@ -11,8 +11,10 @@ describe 'Editing a movie listing' do
 
     fill_in 'Title', with: 'Update Movie Title'
     click_button 'Update Movie'
+
     expect(current_path).to eq(movie_path(movie))
     expect(page).to have_text('Update Movie Title')
+    expect(page).to have_text('Movie successfully updated!')
   end
 
   it 'does not update the movie if it\'s invalid' do
