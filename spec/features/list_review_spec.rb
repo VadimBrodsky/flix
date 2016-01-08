@@ -1,6 +1,6 @@
 describe 'Viewing a list of review' do
   it 'shows the reviews for a specific movie' do
-    movie1 = Movie.create(movie_attribures(title: 'Iron Man'))
+    movie1 = Movie.create(movie_attrites(title: 'Iron Man'))
     review1 = movie1.reviews.create(review_attributes(name: 'Roger Ebert'))
     review2 = movie1.reviews.create(review_attributes(name: 'Gene Siskel'))
 
