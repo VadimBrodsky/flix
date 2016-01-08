@@ -3,6 +3,7 @@
 </header>
 
 <%= form_for [@movie, @review] do |f| %>
+    <%= render 'shared/errors', object: @review %>
     <fieldset>
         <ol>
             <li class="required">
