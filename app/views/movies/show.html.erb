@@ -28,6 +28,11 @@
     <%= format_total_gross(@movie) %>
   </p>
 
+  <h3>Average Review</h3>
+  <p>
+      <%= format_average_stars(@movie) %>
+  </p>
+
     <footer>
         <%= link_to 'Write Review', new_movie_review_path(@movie), class: 'button ok review' %>
         <nav>
