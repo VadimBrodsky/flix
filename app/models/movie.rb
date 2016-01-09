@@ -55,4 +55,8 @@ class Movie < ActiveRecord::Base
   def average_stars
     reviews.average(:stars)
   end
+
+  def recent_reviews(n)
+    reviews.order(created_at: :desc).limit(n)
+  end
 end
