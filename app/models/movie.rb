@@ -1,6 +1,7 @@
 class Movie < ActiveRecord::Base
 
   RATINGS = %w(G PG PG-13 R NC-17)
+  FLOP_AMOUNT = 50_000_000
 
   validates :title, :released_on, :duration, presence: true
   validates :description, length: { minimum: 25 }
@@ -13,10 +14,6 @@ class Movie < ActiveRecord::Base
   validates :rating, inclusion: { in: RATINGS }
 
   has_many :reviews, dependent: :destroy
-
-  def flop?
-    total_gross.blank? || total_gross < 50_000_000
-  end
 
   def self.released
     # Active Record Queries Examples:
@@ -45,11 +42,23 @@ class Movie < ActiveRecord::Base
   end
 
   def self.flops
-    where('total_gross < ?', 50_000_000).order(total_gross: :asc)
+    where('total_gross < ?', FLOP_AMOUNT).order(total_gross: :asc)
   end
 
   def self.recently_added
     order(created_at: :desc).limit(3)
+  end
+
+  def cult_classic?
+    reviews.count > 50 && average_stars >= 4
+  end
+
+  def flop?
+    if cult_classic?
+      false
+    else
+      total_gross.blank? || total_gross < FLOP_AMOUNT
+    end
   end
 
   def average_stars
