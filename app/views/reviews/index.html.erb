@@ -4,13 +4,20 @@
 
 <ol id="reviews">
 <% @reviews.each do |review| %>
-    <li>
+    <li class="review-<%= review.id %>">
         <span class="review"><%= pluralize review.stars, 'star' %></span>
         <span class="user">by <%= review.name %></span>
         <span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
         <p>
             &quot;<%= review.comment %>&quot;
         </p>
+        <footer>
+            <nav>
+                <%= link_to 'Edit', edit_movie_review_path(@movie, review), class: 'button' %>
+                <%= link_to 'Delete', movie_review_path(@movie, review), class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
+            </nav>
+        </footer>
+        <hr/>
     </li>
 <% end %>
 </ol>
