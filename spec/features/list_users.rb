@@ -6,8 +6,8 @@ describe 'Viewing the list of users' do
 
     visit users_url
 
-    expect(page).to have_test(user1.name)
-    expect(page).to have_test(user2.name)
-    expect(page).to have_test(user3.name)
+    expect(page).to have_text(user1.name)
+    expect(page).to have_text(user2.name)
+    expect(page).to have_text(user3.name)
   end
 end
