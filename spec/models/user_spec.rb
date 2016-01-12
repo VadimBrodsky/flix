@@ -52,7 +52,7 @@ describe 'A user' do
                       password: 'secret',
                       password_confirmation: ''))
     user.valid?
-    expect(user.errors[:password].any?).to eq(true)
+    expect(user.errors[:password_confirmation].any?).to eq(true)
   end
 
   it 'requires the password to match the password confirmation' do
@@ -60,7 +60,7 @@ describe 'A user' do
                       password: 'secret',
                       password_confirmation: 'password'))
     user.valid?
-    expect(user.errors[:password].first).to eq('doesn\'t match Password')
+    expect(user.errors[:password_confirmation].first).to eq('doesn\'t match Password')
   end
 
   it 'requires a password and matching confirmation when when creating' do
@@ -72,7 +72,7 @@ describe 'A user' do
 
   it 'does not require a password when updating' do
     user = User.create!(user_attributes)
-    user.password = 'new password'
+    user.password = ''
     expect(user.valid?).to eq(true)
   end
 
