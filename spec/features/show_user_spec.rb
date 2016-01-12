@@ -1,6 +1,6 @@
 describe 'Viewing a user\'s profile page' do
   it 'shows the user\'s details' do
-    user = User.crate!(user_attributes)
+    user = User.create!(user_attributes)
 
     visit user_url(user)
 
