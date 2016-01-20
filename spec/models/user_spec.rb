@@ -5,6 +5,37 @@ describe 'A user' do
     expect(user.errors[:name].any?).to eq(true)
   end
 
+  it 'requires a user name' do
+    user = User.new(user_attributes(username: ''))
+    user.valid?
+    expect(user.errors[:name].any?).to eq(true)
+  end
+
+  it 'accepts properly formatted user names' do
+    usernames = %w(user21 SUPERMAN 1LLya)
+    usernames.each do |username|
+      user = User.new(user_attributes(username: username))
+      user.valid?
+      expect(user.errors[:username].any?).to eq(false)
+    end
+  end
+
+  it 'rejects improperly formatted user names' do
+    usernames = %w(US*&ER C@Rss)
+    usernames.each do |username|
+      user = User.new(user_attributes(username: username))
+      user.valid?
+      expect(user.errors[:username].any?).to eq(true)
+    end
+  end
+
+  it 'rejects a user name that is already taken' do
+    User.create!(user_attributes(username: 'superman'))
+    user2 = User.new(user_attributes(username: 'Superman'))
+    user2.valid?
+    expect(user2.errors[:username].any?).to eq(true)
+  end
+
   it 'requires an email' do
     user = User.new(user_attributes(email: ''))
     user.valid?
