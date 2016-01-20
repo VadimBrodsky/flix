@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   validates :username, presence: true,
                        uniqueness: { case_sensitive: false },
                        format: /\A[a-z0-9]+\z/i
+
+  def gravatar_id
+    Digest::MD5::hexdigest(email.downcase)
+  end
 end
