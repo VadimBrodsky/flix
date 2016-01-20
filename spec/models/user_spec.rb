@@ -135,4 +135,8 @@ describe 'authenticate' do
   it 'returns the user if the email and password match' do
     expect(User.authenticate(@user.email, @user.password)).to eq(@user)
   end
+
+  it 'returns the user if the username and password match' do
+    expect(User.authenticate(@user.username, @user.password)).to eq(@user)
+  end
 end
