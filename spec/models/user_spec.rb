@@ -8,7 +8,7 @@ describe 'A user' do
   it 'requires a user name' do
     user = User.new(user_attributes(username: ''))
     user.valid?
-    expect(user.errors[:name].any?).to eq(true)
+    expect(user.errors[:name].any?).to eq(false)
   end
 
   it 'accepts properly formatted user names' do
