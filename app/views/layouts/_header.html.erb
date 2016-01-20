@@ -4,9 +4,12 @@
 
         <nav>
             <p>
-                <%= link_to current_user.name, current_user %>
-                <%= link_to 'Sign Up', signup_path, class: 'button' %>
-                <%= link_to 'Sign In', signin_path, class: 'button' %>
+                <% if current_user %>
+                    <%= link_to current_user.name, current_user %>
+                <% else %>
+                    <%= link_to 'Sign Up', signup_path, class: 'button' %>
+                    <%= link_to 'Sign In', signin_path, class: 'button' %>
+                <% end %>
             </p>
         </nav>
     </div>
