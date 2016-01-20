@@ -29,7 +29,7 @@ describe 'Signing in' do
     fill_in 'Password', with: 'no match'
     click_button 'Sign In'
 
-    expect(current_path).to eq(signin_path)
+    expect(current_path).to eq(session_path)
     expect(page).to have_text('Invalid')
   end
 end
