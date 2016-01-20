@@ -12,7 +12,7 @@ describe 'Viewing a movie listing' do
     expect(page).to have_text(movie1.cast)
     expect(page).to have_text(movie1.director)
     expect(page).to have_text(movie1.duration)
-    expect(page).to have_selector("img[src$='#{movie1.image_file_name}']")
+    expect(page).to have_selector("img[src*='#{movie1.image_file_name.split('.').first}']")
   end
 
   it 'shows the total gross if the total gross exceeds $50M' do
