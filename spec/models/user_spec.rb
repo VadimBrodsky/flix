@@ -118,3 +118,21 @@ describe 'A user' do
     expect(user.errors[:password].any?).to eq(true)
   end
 end
+
+describe 'authenticate' do
+  before do
+    @user = User.create!(user_attributes)
+  end
+
+  it 'returns non-true value if the email address does not match' do
+    expect(User.authenticate('no match', @user.password)).not_to eq(true)
+  end
+
+  it 'returns non-true value if the email password does not match' do
+    expect(User.authenticate(@user.email, 'no match')).not_to eq(true)
+  end
+
+  it 'returns the user if the email and password match' do
+    expect(User.authenticate(@user.email, @user.password)).to eq(@user)
+  end
+end
