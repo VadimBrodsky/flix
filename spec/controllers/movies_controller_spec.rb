@@ -8,7 +8,7 @@ describe MoviesController do
   context 'when not signed in as an admin user' do
     before do
       @user = User.create!(user_attributes)
-      session[:user_id] = @user
+      session[:user_id] = @user.id
     end
 
     it 'cannot access new' do
@@ -22,17 +22,17 @@ describe MoviesController do
     end
 
     it 'cannot access edit' do
-      get :edit, id: @movie
+      get :edit, id: @movie.id
       expect(response).to redirect_to(root_path)
     end
 
     it 'cannot access update' do
-      patch :update, id: @movie
+      patch :update, id: @movie.id
       expect(response).to redirect_to(root_path)
     end
 
     it 'cannot access destroy' do
-      delete :destroy, id: @movie
+      delete :destroy, id: @movie.id
       expect(response).to redirect_to(root_path)
     end
   end
