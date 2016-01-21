@@ -56,7 +56,6 @@ describe UsersController do
     it 'cannot destroy another user' do
       delete :destroy, id: @user
       expect(response).to redirect_to(root_url)
-      expect(page).not_to have_text('successfully')
     end
   end
 end
