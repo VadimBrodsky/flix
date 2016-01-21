@@ -50,8 +50,6 @@ class UsersController < ApplicationController
 
   def require_correct_user
     @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user?(@user)
   end
 end
