@@ -25,4 +25,12 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user?
+
+  def require_admin
+    redirect_to root_path, alert: 'Unauthorized Access!' unless current_user_admin?
+  end
+
+  def current_user_admin?
+    current_user && current_user.admin?
+  end
 end
