@@ -12,17 +12,17 @@ describe ReviewsController do
 
     it 'cannot access index' do
       get :index, movie_id: @movie
-      expect(response).to redirect_to(new_session_url)
+      expect(response).to redirect_to(new_session_path)
     end
 
     it 'cannot access new' do
       get :new, movie_id: @movie
-      expect(response).to redirect_to(new_session_url)
+      expect(response).to redirect_to(new_session_path)
     end
 
     it 'cannot access create' do
       post :create, movie_id: @movie
-      expect(response).to redirect_to(new_session_url)
+      expect(response).to redirect_to(new_session_path)
     end
   end
 end
