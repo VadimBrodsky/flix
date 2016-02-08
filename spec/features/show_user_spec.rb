@@ -15,6 +15,6 @@ describe 'Viewing a user\'s profile page' do
     sign_in(user)
     visit user_url(user)
 
-    expect(page).to have_text('Member Since January 2016')
+    expect(page).to have_text("Member Since #{Time.now.strftime('%B %Y')}")
   end
 end
