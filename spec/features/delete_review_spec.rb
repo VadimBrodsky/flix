@@ -6,8 +6,8 @@ describe 'Deleting a review' do
 
   it 'destroys the review and shows the review listing without the deleted review' do
     movie = Movie.create!(movie_attributes)
-    movie.reviews.create!(review_attributes(comment: 'Delete me review'))
-    movie.reviews.create!(review_attributes)
+    movie.reviews.create!(review_attributes(comment: 'Delete me review', user: @user))
+    movie.reviews.create!(review_attributes(user: @user))
 
     visit movie_reviews_path(movie)
     within('.review-1') do
