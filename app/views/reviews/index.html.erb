@@ -5,8 +5,9 @@
 <ol id="reviews">
 <% @reviews.each do |review| %>
     <li class="review-<%= review.id %>">
+        <%= profile_image_for(review.user, size: 35) %>
         <span class="review"><%= pluralize review.stars, 'star' %></span>
-        <span class="user">by <%= link_to review.user.name, review.user %></span>
+        <span class="user">by <%= link_to review.user.username, review.user %></span>
         <span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
         <p>
             &quot;<%= review.comment %>&quot;
