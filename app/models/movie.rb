@@ -16,6 +16,7 @@ class Movie < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :fans, through: :favorites, source: :user
+  has_many :critics, through: :reviews, source: :user
 
   def self.released
     # Active Record Queries Examples:
