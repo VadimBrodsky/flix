@@ -21,7 +21,10 @@
       <h3>Fans</h3>
       <ul>
           <% @fans.each do |user| %>
-              <li><%= link_to user.name, user %></li>
+              <li>
+                  <%= profile_image_for(user, size: 35) %>
+                  <%= link_to user.username, user %>
+              </li>
           <% end %>
       </ul>
   <% end %>
