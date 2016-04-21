@@ -13,6 +13,13 @@
     <%= @movie.rating %> &bull; <%= @movie.duration %>
   </p>
 
+  <h3>Genres</h3>
+  <ul>
+      <% @genres.each do |genre| %>
+      <li><%= genre.name %></li>
+      <% end %>
+  </ul>
+
   <p>
       <%= pluralize(@fans.size, 'fan') %>
       <% if current_user %>
