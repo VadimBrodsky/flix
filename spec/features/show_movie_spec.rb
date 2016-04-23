@@ -29,7 +29,7 @@ describe 'Viewing a movie listing' do
     expect(page).to have_text('Flop!')
   end
 
-  it "it shows the movie's fans and genres in the sidebar" do
+  it 'it shows the movie\'s fans and genres in the sidebar' do
     movie = Movie.create!(movie_attributes)
     user = User.reate!(user_attributes)
 
@@ -46,7 +46,7 @@ describe 'Viewing a movie listing' do
     end
   end
 
-  it "includes the movie's title in the page title" do
+  it 'includes the movie\'s title in the page title' do
     movie = Movie.create!(movie_attributes)
 
     visit movie_url(movie)

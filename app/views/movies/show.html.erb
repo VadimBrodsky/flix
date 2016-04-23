@@ -33,6 +33,7 @@
       <% end %>
   </p>
 
+  <% content_for(:side) do %>
   <% if @fans.any? %>
       <h3>Fans</h3>
       <ul>
@@ -43,6 +44,7 @@
               </li>
           <% end %>
       </ul>
+  <% end %>
   <% end %>
 
   <h3>Cast</h3>
