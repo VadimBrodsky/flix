@@ -215,7 +215,6 @@ describe 'A movie' do
 
     it 'returns a default of 5 released movies ordered with the most recent movie first' do
       expect(Movie.recent).to eq([@movie6, @movie5, @movie4, @movie3, @movie2])
-
     end
   end
 end
