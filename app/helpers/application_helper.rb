@@ -6,4 +6,8 @@ module ApplicationHelper
       "Flix  a better IMDB"
     end
   end
+
+  def title(title)
+    content_for(:title, title)
+  end
 end
