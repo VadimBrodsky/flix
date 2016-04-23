@@ -13,13 +13,6 @@
     <%= @movie.rating %> &bull; <%= @movie.duration %>
   </p>
 
-  <h3>Genres</h3>
-  <ul>
-      <% @genres.each do |genre| %>
-      <li><%= genre.name %></li>
-      <% end %>
-  </ul>
-
   <p>
       <%= pluralize(@fans.size, 'fan') %>
       <% if current_user %>
@@ -33,19 +26,6 @@
       <% end %>
   </p>
 
-  <% content_for(:side) do %>
-  <% if @fans.any? %>
-      <h3>Fans</h3>
-      <ul>
-          <% @fans.each do |user| %>
-              <li>
-                  <%= profile_image_for(user, size: 35) %>
-                  <%= link_to user.username, user %>
-              </li>
-          <% end %>
-      </ul>
-  <% end %>
-  <% end %>
 
   <h3>Cast</h3>
   <p>
@@ -101,3 +81,24 @@
 </article>
 
 
+
+<% content_for(:side) do %>
+<% if @fans.any? %>
+    <h3>Fans</h3>
+    <ul>
+        <% @fans.each do |user| %>
+            <li>
+                <%= profile_image_for(user, size: 35) %>
+                <%= link_to user.username, user %>
+            </li>
+        <% end %>
+    </ul>
+<% end %>
+
+<h3>Genres</h3>
+<ul>
+    <% @genres.each do |genre| %>
+    <li><%= genre.name %></li>
+    <% end %>
+</ul>
+<% end %>
