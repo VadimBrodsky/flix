@@ -13,6 +13,38 @@
     <%= @movie.rating %> &bull; <%= @movie.duration %>
   </p>
 
+  <h3>Genres</h3>
+  <ul>
+      <% @genres.each do |genre| %>
+      <li><%= genre.name %></li>
+      <% end %>
+  </ul>
+
+  <p>
+      <%= pluralize(@fans.size, 'fan') %>
+      <% if current_user %>
+        <% if @current_favorite %>
+            <%= button_to 'Unfave', movie_favorite_path(@movie, @current_favorite),
+                method: :delete, class: 'button unfave' %>
+        <% else %>
+            <%= button_to 'Fave', movie_favorites_path(@movie),
+                class: 'button fave' %>
+        <% end %>
+      <% end %>
+  </p>
+
+  <% if @fans.any? %>
+      <h3>Fans</h3>
+      <ul>
+          <% @fans.each do |user| %>
+              <li>
+                  <%= profile_image_for(user, size: 35) %>
+                  <%= link_to user.username, user %>
+              </li>
+          <% end %>
+      </ul>
+  <% end %>
+
   <h3>Cast</h3>
   <p>
       <%= @movie.cast %>

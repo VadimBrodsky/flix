@@ -14,6 +14,11 @@ class Movie < ActiveRecord::Base
   validates :rating, inclusion: { in: RATINGS }
 
   has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :fans, through: :favorites, source: :user
+  has_many :critics, through: :reviews, source: :user
+  has_many :characterizations, dependent: :destroy
+  has_many :genres, through: :characterizations
 
   def self.released
     # Active Record Queries Examples:

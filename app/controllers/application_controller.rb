@@ -18,12 +18,14 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  # Make a the method available in the view
   helper_method :current_user
 
   def current_user?(user)
     user == current_user
   end
 
+  # Make a the method available in the view
   helper_method :current_user?
 
   def require_admin
