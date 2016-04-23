@@ -1,4 +1,6 @@
-<% content_for(:title, @movie.title) %>
+<% content_for(:title) do %>
+    <% "#{@movie.title} (#{@movie.released_on.year})" %>
+<% end %>
 
 <article id="movie" class="movie">
   <header>
