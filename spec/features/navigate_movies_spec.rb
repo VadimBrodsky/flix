@@ -3,7 +3,7 @@ describe 'Navigating movies' do
     movie = Movie.create(movie_attributes)
 
     visit movie_url(movie)
-    click_link 'All Movies' # Capybara provided method to interact with the page
+    click_link 'Released' # Capybara provided method to interact with the page
 
     expect(current_path).to eq(movies_path)
   end
