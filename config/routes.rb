@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   get 'movies/filter/:scope' => 'movies#index', as: :filtered_movies
 
+  %w(hits flops upcoming recent).each do |scope|
+    get "movies/#{scope}" => redirect("movies/filter/#{scope}")
+  end
+
   resources :movies do
     resources :reviews
     resources :favorites
