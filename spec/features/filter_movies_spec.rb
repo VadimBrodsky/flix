@@ -30,7 +30,7 @@ describe 'Filtering movies' do
   end
 
   it 'shows recent movies' do
-    movie = Movie.create!(movie_attributes(released_on: 1.day.from_ago))
+    movie = Movie.create!(movie_attributes(released_on: 1.day.from_now))
 
     visit movies_url
     click_link 'Recent'

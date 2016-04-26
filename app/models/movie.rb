@@ -22,7 +22,7 @@ class Movie < ActiveRecord::Base
   has_many :genres, through: :characterizations
 
   scope :released, -> { where('released_on <= ?', Time.now).order(released_on: :desc) }
-  scope :hits, -> { released.where('total_gross > ?', HIT_AMOUNT).order(total_gross: :desc) }
+  scope :hits, -> { released.where('total_gross >= ?', HIT_AMOUNT).order(total_gross: :desc) }
   scope :flops, -> { released.where('total_gross < ?', FLOP_AMOUNT).order(total_gross: :asc) }
   scope :recently_added, -> { order(created_at: :desc).limit(3) }
   scope :upcoming, -> { where('released_on > ?', Time.now).order(released_on: :asc) }
