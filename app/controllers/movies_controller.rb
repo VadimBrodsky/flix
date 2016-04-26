@@ -4,8 +4,10 @@ class MoviesController < ApplicationController
 
   def index
     case params[:scope]
-    when :flops
+    when 'flops'
       @movies = Movie.flops
+    when 'hits'
+      @movies = Movie.hits
     else
       @movies = Movie.released
     end

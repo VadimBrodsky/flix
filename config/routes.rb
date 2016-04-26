@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :genres
   root 'movies#index'
 
-  get 'movies/filter/flops' => 'movies#index', scope: :flops
+  # get 'movies/filter/flops' => 'movies#index', scope: :flops
+  # get 'movies/filter/hits' => 'movies#index', scope: :flops
+  get 'movies/filter/:scope' => 'movies#index'
 
   resources :movies do
     resources :reviews
