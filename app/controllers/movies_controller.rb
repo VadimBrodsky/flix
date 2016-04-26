@@ -8,6 +8,10 @@ class MoviesController < ApplicationController
       @movies = Movie.flops
     when 'hits'
       @movies = Movie.hits
+    when 'recent'
+      @movies = Movie.recent
+    when 'upcoming'
+      @movies = Movie.upcoming
     else
       @movies = Movie.released
     end
