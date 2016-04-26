@@ -2,6 +2,7 @@ class Movie < ActiveRecord::Base
 
   RATINGS = %w(G PG PG-13 R NC-17)
   FLOP_AMOUNT = 50_000_000
+  HIT_AMOUNT = 300_000_000
 
   validates :title, :released_on, :duration, presence: true
   validates :description, length: { minimum: 25 }
@@ -21,6 +22,9 @@ class Movie < ActiveRecord::Base
   has_many :genres, through: :characterizations
 
   scope :released, -> { where('released_on <= ?', Time.now).order(released_on: :desc) }
+  scope :hits, -> { where('total_gross > ?', HIT_AMOUNT).order(total_gross: :desc) }
+  scope :flops, -> { where('total_gross < ?', FLOP_AMOUNT).order(total_gross: :asc) }
+  scope :recently_added, -> { order(created_at: :desc).limit(3) }
 
   # Active Record Queries Examples:
   # Movie.count
@@ -39,18 +43,6 @@ class Movie < ActiveRecord::Base
   # Movie.where('released_on <= ?', Time.now)
   # Movie.where('released_on <= ?', Time.now).count
   # Movie.where('released_on <= ?', Time.now).order('released_on')
-
-  def self.hits
-    where('total_gross > ?', 300_000_000).order(total_gross: :desc)
-  end
-
-  def self.flops
-    where('total_gross < ?', FLOP_AMOUNT).order(total_gross: :asc)
-  end
-
-  def self.recently_added
-    order(created_at: :desc).limit(3)
-  end
 
   def cult_classic?
     reviews.count > 50 && average_stars >= 4
