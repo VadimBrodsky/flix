@@ -11,13 +11,13 @@ describe FavoritesController do
     end
 
     it 'cannot access create' do
-      post :create, movies_id: @movie.id
-      expect(response).to redirect_to(new_session_url)
+      post :create, movie_id: @movie.id
+      expect(response).to redirect_to(new_session_path)
     end
 
     it 'cannot access destroy' do
       delete :destroy, id: 1, movie_id: @movie.id
-      expect(response).to redirect_to(new_session_url)
+      expect(response).to redirect_to(new_session_path)
     end
   end
 end

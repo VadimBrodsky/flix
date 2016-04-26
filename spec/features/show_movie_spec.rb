@@ -31,7 +31,7 @@ describe 'Viewing a movie listing' do
 
   it 'it shows the movie\'s fans and genres in the sidebar' do
     movie = Movie.create!(movie_attributes)
-    user = User.reate!(user_attributes)
+    user = User.create!(user_attributes)
 
     movie.fans << user
 
@@ -41,7 +41,7 @@ describe 'Viewing a movie listing' do
     visit movie_url(movie)
 
     within('aside#sidebar') do
-      expect(page).to have_text(user.name)
+      expect(page).to have_text(user.username)
       expect(page).to have_text(genre.name)
     end
   end
@@ -51,6 +51,6 @@ describe 'Viewing a movie listing' do
 
     visit movie_url(movie)
 
-    expect(page).to have_title("Flix - #{movie.title}")
+    expect(page).to have_title("#{movie.title}")
   end
 end

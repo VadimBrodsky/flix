@@ -22,7 +22,7 @@ describe 'Viewing a user\'s profile page' do
     user = User.create!(user_attributes)
 
     movie = Movie.create!(movie_attributes)
-    user.favourite_movies << movie
+    user.favorite_movies << movie
 
     sign_in(user)
     visit user_url(user)
@@ -38,6 +38,6 @@ describe 'Viewing a user\'s profile page' do
     sign_in(user)
     visit user_url(user)
 
-    expect(page).to have_title("Flix - #{user.name}")
+    expect(page).to have_title("#{user.name} | Flix")
   end
 end
