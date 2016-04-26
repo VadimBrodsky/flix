@@ -28,6 +28,8 @@ class Movie < ActiveRecord::Base
   scope :upcoming, -> { where('released_on > ?', Time.now).order(released_on: :asc) }
   scope :rated, -> (rating) { released.where(rating: rating)}
   scope :recent, -> (max=5) { released.limit(max) }
+  scope :grossed_less_than, -> (max) { released.where('total_gross < ?', max) }
+  scope :grossed_greater_than, -> (min) { released.where('total_gross > ?', min) }
 
   # Active Record Queries Examples:
   # Movie.count
