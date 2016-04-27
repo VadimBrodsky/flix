@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   scope :by_name, -> { order(:name) }
   scope :not_admins, -> { by_name.where(admin: false) }
 
+  before_save :format_email
+
   def gravatar_id
     Digest::MD5::hexdigest(email.downcase)
   end
@@ -25,5 +27,9 @@ class User < ActiveRecord::Base
     user = User.find_by(email: email_or_username) ||
            User.find_by(username: email_or_username)
     user && user.authenticate(password)
+  end
+
+  def format_email
+    self.email = email.downcase
   end
 end
