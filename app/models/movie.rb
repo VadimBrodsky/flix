@@ -68,4 +68,8 @@ class Movie < ActiveRecord::Base
   def recent_reviews(n)
     reviews.order(created_at: :desc).limit(n)
   end
+
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
 end
