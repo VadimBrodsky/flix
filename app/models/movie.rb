@@ -13,6 +13,8 @@ class Movie < ActiveRecord::Base
       message: 'must reference a GIF, JPG, or PNG image'
     }
   validates :rating, inclusion: { in: RATINGS }
+  validates :title, uniqueness: true
+  validates :slug, uniqueness: true
 
   has_many :reviews, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :favorites, dependent: :destroy
@@ -70,6 +72,6 @@ class Movie < ActiveRecord::Base
   end
 
   def to_param
-    "#{id}-#{title.parameterize}"
+    slug
   end
 end
