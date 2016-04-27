@@ -77,6 +77,8 @@ class Movie < ActiveRecord::Base
     slug
   end
 
+  # Rails 4.1 added the to_param :title which is like adding the to_param method that adds a title to the id
+
   def generate_slug
     self.slug ||= title.parameterize if title
   end
