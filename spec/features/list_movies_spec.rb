@@ -2,9 +2,9 @@ describe 'Viewing the list of movies' do
 
   it 'shows the movies' do
     # Arrange
-    movie1 = Movie.create(movie_attributes(total_gross: 318_412_101.00))
-    movie2 = Movie.create(movie_attributes)
-    movie3 = Movie.create(movie_attributes)
+    movie1 = Movie.create(movie_attributes(title: 'movie a', total_gross: 318_412_101.00))
+    movie2 = Movie.create(movie_attributes(title: 'movie b'))
+    movie3 = Movie.create(movie_attributes(title: 'movie c'))
 
     # Act
     visit movies_url
