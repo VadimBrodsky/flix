@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>class Movie - Rails Application Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-average_stars">#average_stars</a>
+    
+    <li ><a href="#method-i-cult_classic-3F">#cult_classic?</a>
+    
+    <li ><a href="#method-i-flop-3F">#flop?</a>
+    
+    <li ><a href="#method-i-generate_slug">#generate_slug</a>
+    
+    <li ><a href="#method-i-recent_reviews">#recent_reviews</a>
+    
+    <li ><a href="#method-i-to_param">#to_param</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Movie">
+  <h1 id="class-Movie" class="class">
+    class Movie
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="FLOP_AMOUNT">FLOP_AMOUNT
+        
+        <dd>
+        
+      
+        <dt id="HIT_AMOUNT">HIT_AMOUNT
+        
+        <dd>
+        
+      
+        <dt id="RATINGS">RATINGS
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-average_stars" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">average_stars</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="average_stars-source">
+            <pre><span class="ruby-comment"># File app/models/movie.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">average_stars</span>
+  <span class="ruby-identifier">reviews</span>.<span class="ruby-identifier">average</span>(<span class="ruby-value">:stars</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-cult_classic-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cult_classic?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Active Record Queries Examples: Movie.count Movie.all
+Movie.order(&#39;released_on&#39;) Movie.order(&#39;released_on asc&#39;)
+Movie.order(released_on: :asc) Movie.order(released_on: :desc)
+Movie.find(2) Movie.find_by(title: &#39;Iron Man&#39;) Movie.where(rating:
+&#39;PG-13&#39;) Movie.where.not(rating: &#39;PG-13&#39;)
+Movie.where.not(rating: [&#39;PG&#39;, &#39;PG-13&#39;])
+Movie.where(&#39;total_gross &lt; 50000000&#39;)
+Movie.where(&#39;total_gross &lt; ?&#39;, 50_000_000)
+Movie.where(&#39;released_on &lt;= ?&#39;, Time.now)
+Movie.where(&#39;released_on &lt;= ?&#39;, Time.now).count
+Movie.where(&#39;released_on &lt;= ?&#39;,
+Time.now).order(&#39;released_on&#39;)</p>
+          
+          
+
+          
+          <div class="method-source-code" id="cult_classic-3F-source">
+            <pre><span class="ruby-comment"># File app/models/movie.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cult_classic?</span>
+  <span class="ruby-identifier">reviews</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">50</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">average_stars</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">4</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-flop-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">flop?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="flop-3F-source">
+            <pre><span class="ruby-comment"># File app/models/movie.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flop?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">cult_classic?</span>
+    <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">total_gross</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">total_gross</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">FLOP_AMOUNT</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_slug" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_slug</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Rails 4.1 added the <a href="Movie.html#method-i-to_param">#to_param</a>
+:title which is like adding the <a
+href="Movie.html#method-i-to_param">#to_param</a> method that adds a title
+to the id</p>
+          
+          
+
+          
+          <div class="method-source-code" id="generate_slug-source">
+            <pre><span class="ruby-comment"># File app/models/movie.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_slug</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">slug</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">title</span>.<span class="ruby-identifier">parameterize</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">title</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-recent_reviews" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recent_reviews</span><span
+            class="method-args">(n)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="recent_reviews-source">
+            <pre><span class="ruby-comment"># File app/models/movie.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">recent_reviews</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-identifier">reviews</span>.<span class="ruby-identifier">order</span>(<span class="ruby-identifier">created_at</span><span class="ruby-operator">:</span> <span class="ruby-value">:desc</span>).<span class="ruby-identifier">limit</span>(<span class="ruby-identifier">n</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_param" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_param</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_param-source">
+            <pre><span class="ruby-comment"># File app/models/movie.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_param</span>
+  <span class="ruby-identifier">slug</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

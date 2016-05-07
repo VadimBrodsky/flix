@@ -1,0 +1,21 @@
+Fri, 06 May 2016 22:40:19 -0400
+README.rdoc	Sat, 27 Feb 2016 14:19:22 -0500
+app/controllers/application_controller.rb	Sat, 23 Apr 2016 10:40:55 -0400
+app/controllers/favorites_controller.rb	Tue, 26 Apr 2016 22:40:50 -0400
+app/controllers/genres_controller.rb	Sat, 23 Apr 2016 10:40:55 -0400
+app/controllers/movies_controller.rb	Tue, 26 Apr 2016 22:40:50 -0400
+app/controllers/reviews_controller.rb	Tue, 26 Apr 2016 22:40:50 -0400
+app/controllers/sessions_controller.rb	Sat, 27 Feb 2016 14:19:22 -0500
+app/controllers/users_controller.rb	Tue, 26 Apr 2016 22:40:50 -0400
+app/helpers/application_helper.rb	Tue, 26 Apr 2016 00:52:42 -0400
+app/helpers/favorites_helper.rb	Sat, 23 Apr 2016 10:40:55 -0400
+app/helpers/genres_helper.rb	Sat, 23 Apr 2016 10:40:55 -0400
+app/helpers/movies_helper.rb	Sat, 27 Feb 2016 14:19:22 -0500
+app/helpers/reviews_helper.rb	Sat, 27 Feb 2016 14:19:22 -0500
+app/helpers/users_helper.rb	Sat, 27 Feb 2016 14:19:22 -0500
+app/models/characterization.rb	Sat, 23 Apr 2016 10:40:55 -0400
+app/models/favorite.rb	Sat, 23 Apr 2016 10:40:55 -0400
+app/models/genre.rb	Sat, 23 Apr 2016 10:40:55 -0400
+app/models/movie.rb	Tue, 26 Apr 2016 22:40:50 -0400
+app/models/review.rb	Mon, 25 Apr 2016 23:39:44 -0400
+app/models/user.rb	Tue, 26 Apr 2016 22:40:50 -0400
